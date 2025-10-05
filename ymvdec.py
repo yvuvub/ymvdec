@@ -10,7 +10,7 @@ def decrypt_segment(segment: bytes) -> bytes:
     """对单个段进行解密，返回解密后的字节流。"""
     output = bytearray()
     for n, b in enumerate(segment):
-        key = ((n & 0xF) + 10) & 0xFF
+        key = ((n & 0xF) + 0x10) & 0xFF
         decoded = b ^ key 
         output.append(decoded)
     return bytes(output)
