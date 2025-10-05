@@ -11,7 +11,7 @@ def decrypt_segment(segment: bytes) -> bytes:
     output = bytearray()
     for n, b in enumerate(segment):
         key = ((n & 0xF) + 10) & 0xFF
-        decoded = b ^ key ^ 0xFF
+        decoded = b ^ key 
         output.append(decoded)
     return bytes(output)
 
